@@ -22,9 +22,6 @@
     "web3": "^1.6.1",
     "web3modal": "^1.9.4"
   },
-  "engines": {
-    "node": "12.x|14.x"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
