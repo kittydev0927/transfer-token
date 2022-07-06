@@ -15,7 +15,7 @@ import { CustomButton } from "../../components/CustomButton";
 import transferTokenCont from "../../ABI/transferToken.json";
 import token1Cont from '../../ABI/token1.json';
 import token2Cont from '../../ABI/token2.json';
-const transferTokenAddr = "0x3Ec7621d3B0d72aE5D0b429594c01b38d1c3b602";
+const transferTokenAddr = "0x6DCFa70b8C681fA116068Ddc2628eAd02d9363d0";
 const token1Addr = "0x2d48FB45cBd69206C107Dc3242F8B5Adb0482812";
 const token2Addr = "0xE75DD44aC59DEd59b909e222c522f7117e387F04";
 let myAddr = "";
