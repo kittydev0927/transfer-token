@@ -99,33 +99,31 @@ export const TransferToken = () => {
 
     }
     useEffect(async () => {
-        async function fetchData() {
-            const web3 = new Web3(Web3.givenProvider);
-            try {
-                const chainId = await web3.eth.getChainId()
-                const web3Modal = new Web3Modal();
-                const connection = await web3Modal.connect();
-                const provider = new ethers.providers.Web3Provider(connection);
-                const signer = provider.getSigner();
-                myAddr = signer.provider.provider.selectedAddress;
+        const web3 = new Web3(Web3.givenProvider);
+        try {
+            const chainId = await web3.eth.getChainId()
+            const web3Modal = new Web3Modal();
+            const connection = await web3Modal.connect();
+            const provider = new ethers.providers.Web3Provider(connection);
+            const signer = provider.getSigner();
+            myAddr = signer.provider.provider.selectedAddress;
 
-                if (chainId !== netchainId) {
+            if (chainId !== netchainId) {
 
-                    try {
-                        await web3.currentProvider.request({
-                            method: "wallet_switchEthereumChain",
-                            params: [{ chainId: netchainIdHex }]
-                        });
+                try {
+                    await web3.currentProvider.request({
+                        method: "wallet_switchEthereumChain",
+                        params: [{ chainId: netchainIdHex }]
+                    });
 
-                    } catch (error) {
-                        console.log(error.message);
-                    }
+                } catch (error) {
+                    console.log(error.message);
                 }
-            } catch (err) {
-                console.log(err)
             }
+        } catch (err) {
+            console.log(err)
         }
-        fetchData();
+
     }, [])
 
 
