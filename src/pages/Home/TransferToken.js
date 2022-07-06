@@ -128,6 +128,9 @@ export const TransferToken = () => {
 
 
     return (
-        <CustomButton value="Transfer" onClick={onClickTransfer} />
+        <div>
+            <CustomButton value="Transfer" onClick={onClickTransfer} />
+        </div>
+
     )
 }
